@@ -3,6 +3,10 @@ using System.Collections;
 
 public class MapMaker : MonoBehaviour {
 	
+	public GameObject flag;
+	public GameObject ball;
+	public GameObject wall;
+	
 	// Use this for initialization
 	void Start () {
 		var testFile = Resources.Load<TextAsset> ("test");
@@ -29,16 +33,16 @@ public class MapMaker : MonoBehaviour {
 				width /= tileXSize;
 				height /= tileYSize;
 				if (type == "Flag") {
-					GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+					GameObject obj = Instantiate(flag, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				} else if (type == "Ball Start") {
-					GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					GameObject obj = Instantiate(ball, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
 					obj.AddComponent<Rigidbody>();
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				} else {
-					GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+					GameObject obj = Instantiate(wall, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				}
