@@ -3,12 +3,14 @@ using System.Collections;
 
 public class MenuExitBtn : MonoBehaviour {
 
+	public Color defaultColor;
+	
 	void OnMouseEnter() {
-		guiText.color = Color.blue;
+		guiText.color = Color.red;
 	}
 	
 	void OnMouseExit() {
-		guiText.color = Color.white;
+		guiText.color = defaultColor;
 	}
 	
 	void OnMouseUp() {

@@ -4,12 +4,14 @@ using System.Collections;
 public class MenuStartBtn : MonoBehaviour {
 
 
+	public Color defaultColor;
+	
 	void OnMouseEnter() {
-		guiText.color = Color.blue;
+		guiText.color = Color.red;
 	}
-
+	
 	void OnMouseExit() {
-		guiText.color = Color.white;
+		guiText.color = defaultColor;
 	}
 
 	void OnMouseUp() {
