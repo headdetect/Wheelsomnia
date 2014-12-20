@@ -6,6 +6,13 @@ public class MapMaker : MonoBehaviour {
 	public GameObject flag;
 	public GameObject ball;
 	public GameObject wall;
+
+	private GameObject PlayerBall { get; set; }
+	private Rigidbody PlayerRigidBody {
+		get {
+			return PlayerBall.rigidbody;
+		}
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -37,14 +44,13 @@ public class MapMaker : MonoBehaviour {
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				} else if (type == "Ball Start") {
-					ball.AddComponent<WheelCollider>();
-					ball.AddComponent<Rigidbody2D>();
 					GameObject obj = Instantiate(ball, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
+					PlayerBall = obj;
 				} else {
 					GameObject obj = Instantiate(wall, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
-					obj.transform.localScale = new Vector3(width, height, 1);
+					obj.transform.localScale = new Vector3(width / 2f, height / 2f, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				}
 				
@@ -54,6 +60,8 @@ public class MapMaker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			PlayerRigidBody.angularVelocity += new Vector3(1, 1, 0);
+		}
 	}
 }
