@@ -34,7 +34,7 @@
                  "y":272
                 }, 
                 {
-                 "height":16,
+                 "height":32,
                  "name":"",
                  "properties":
                     {
@@ -43,7 +43,7 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
+                 "width":128,
                  "x":336,
                  "y":336
                 }, 
@@ -258,7 +258,7 @@
                  "y":144
                 }, 
                 {
-                 "height":16,
+                 "height":128,
                  "name":"",
                  "properties":
                     {
@@ -267,7 +267,7 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
+                 "width":32,
                  "x":256,
                  "y":352
                 }, 
@@ -759,7 +759,7 @@
     {
 
     },
- "renderorder":"right-down",
+ "renderorder":"right-up",
  "tileheight":16,
  "tilesets":[],
  "tilewidth":16,
