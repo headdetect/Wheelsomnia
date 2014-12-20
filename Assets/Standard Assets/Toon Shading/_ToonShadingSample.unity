@@ -137,8 +137,8 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 26}
   - 102: {fileID: 48}
+  - 4: {fileID: 26}
   - 23: {fileID: 36}
   m_Layer: 0
   m_Name: Heading
@@ -200,8 +200,8 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 27}
   - 102: {fileID: 49}
+  - 4: {fileID: 27}
   - 23: {fileID: 37}
   m_Layer: 0
   m_Name: Heading
@@ -217,8 +217,8 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 28}
   - 102: {fileID: 50}
+  - 4: {fileID: 28}
   - 23: {fileID: 38}
   m_Layer: 0
   m_Name: Heading
@@ -234,8 +234,8 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 25}
   - 102: {fileID: 51}
+  - 4: {fileID: 25}
   - 23: {fileID: 39}
   m_Layer: 0
   m_Name: Heading
