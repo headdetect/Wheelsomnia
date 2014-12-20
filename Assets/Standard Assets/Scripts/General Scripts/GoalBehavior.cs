@@ -13,14 +13,6 @@ public class GoalBehavior : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D otherObj)
-	{
-		if (otherObj.tag == "Player") {
-			found = false;
-		}
-	}
-
-
 	void OnGUI() {
 		if (found)
 			windowRect = GUI.Window (0, windowRect, WinningFunction, "You won!");
