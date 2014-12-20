@@ -37,8 +37,9 @@ public class MapMaker : MonoBehaviour {
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				} else if (type == "Ball Start") {
+					ball.AddComponent<WheelCollider>();
+					ball.AddComponent<Rigidbody2D>();
 					GameObject obj = Instantiate(ball, new Vector3(x / tileXSize, y / tileYSize, 0), Quaternion.identity) as GameObject;
-					obj.AddComponent<Rigidbody>();
 					obj.transform.localScale = new Vector3(width, height, 1);
 					obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 				} else {

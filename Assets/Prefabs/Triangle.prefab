@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 403066}
   - 33: {fileID: 3303066}
   - 23: {fileID: 2303066}
+  - 50: {fileID: 5014580}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -56,6 +57,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103066}
   m_Mesh: {fileID: 4300000, guid: a74a361baf27b744d9df2e43091f9f9d, type: 3}
+--- !u!50 &5014580
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103066}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
