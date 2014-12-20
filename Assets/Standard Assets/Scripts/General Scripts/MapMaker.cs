@@ -41,7 +41,7 @@ public class MapMaker : MonoBehaviour {
 
 			for(int h = 0; h < height; h++) {
 				for(int w = 0; w < width; w++) {
-					int index = w * width + h;
+					int index = h * width + w;
 					GameObjectTypes type = (GameObjectTypes)data[index].AsInt;
 					GameObject obj = null;
 					switch(type) {
@@ -64,9 +64,10 @@ public class MapMaker : MonoBehaviour {
 							break;
 					}
 
-					x += objectScale * objectScaleLocal / width;
+					x += 2;
 				}
-				y += objectScale * objectScaleLocal / height;
+				x = 0;
+				y -= 2;
 			}
 		}
 	}
