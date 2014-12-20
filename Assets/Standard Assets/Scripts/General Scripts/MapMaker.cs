@@ -8,10 +8,28 @@ public class MapMaker : MonoBehaviour {
 		var testFile = Resources.Load<TextAsset> ("test");
 
 		var mapInfo = SimpleJSON.JSON.Parse (testFile.text);
+		
+		float tileXSize = mapInfo ["tilewidth"].AsFloat;
+		float tileYSize = mapInfo ["tileheight"].AsFloat;
+
+		float yadd = mapInfo["height"].AsFloat * tileYSize;
+
 		foreach (SimpleJSON.JSONNode t in mapInfo["layers"].AsArray) {
 			foreach (SimpleJSON.JSONNode o in t["objects"].AsArray) {
 				float x = o["x"].AsFloat;
-				float y = o["y"].AsFloat;
+				float y = -o["y"].AsFloat + yadd;
+				float width = o["width"].AsFloat;
+				float height = o["height"].AsFloat;
+
+				x += (width / 2f);
+				y -= (height / 2f);
+
+				width /= tileXSize;
+				height /= tileYSize;
+
+				GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+				obj.transform.localScale = new Vector3(width, height, 1);
+				obj.transform.position = new Vector3(x / tileXSize, y / tileYSize, 0);
 			}
 		}
 	}

@@ -34,7 +34,7 @@
                  "y":272
                 }, 
                 {
-                 "height":16,
+                 "height":32,
                  "name":"",
                  "properties":
                     {
@@ -43,7 +43,7 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
+                 "width":128,
                  "x":336,
                  "y":336
                 }, 
@@ -258,7 +258,7 @@
                  "y":144
                 }, 
                 {
-                 "height":16,
+                 "height":128,
                  "name":"",
                  "properties":
                     {
@@ -267,7 +267,7 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":16,
+                 "width":32,
                  "x":256,
                  "y":352
                 }, 
@@ -746,6 +746,34 @@
                  "width":16,
                  "x":624,
                  "y":176
+                }, 
+                {
+                 "height":32,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"Ball Start",
+                 "visible":true,
+                 "width":32,
+                 "x":352,
+                 "y":304
+                }, 
+                {
+                 "height":64,
+                 "name":"",
+                 "properties":
+                    {
+
+                    },
+                 "rotation":0,
+                 "type":"Flag",
+                 "visible":true,
+                 "width":16,
+                 "x":257,
+                 "y":288
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -759,7 +787,7 @@
     {
 
     },
- "renderorder":"right-down",
+ "renderorder":"right-up",
  "tileheight":16,
  "tilesets":[],
  "tilewidth":16,
