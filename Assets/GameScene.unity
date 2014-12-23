@@ -224,10 +224,6 @@ MonoBehaviour:
   flag: {fileID: 123588, guid: daeddced3412300438c0722952a012ef, type: 2}
   ball: {fileID: 149456, guid: 1da2bf2e17267be48a1d85c0ebd71510, type: 2}
   wall: {fileID: 174202, guid: 9f7a0bcc9b4b98e42a3bcffbcc4e07ec, type: 2}
-  speed: 15
-  maxSpeed: 1500
-  currentAngularVelocity: 0
-  multiplyer: 10
 --- !u!81 &942059358
 AudioListener:
   m_ObjectHideFlags: 0
