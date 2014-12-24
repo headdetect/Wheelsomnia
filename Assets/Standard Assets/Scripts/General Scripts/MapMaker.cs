@@ -5,8 +5,8 @@ enum GameObjectTypes {
 	Nothing = 0,
 	Wall = 1,
 	Ball = 2,
-	Lava = 3,
-	Flag = 4
+	Lava = 5,
+	Flag = 6
 }
 
 public class MapMaker : MonoBehaviour {

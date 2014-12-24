@@ -35,31 +35,31 @@ public class BallController : MonoBehaviour {
 		//	followScript = Camera.main.GetComponent<SmoothFollow> ();
 		//followScript.target = transform;
 		if (Input.GetKey (KeyCode.Space) && !justLetGoOfSpace) {
-			if(!firstPass) {
-				Debug.Log ("Just pressed space");
-				firstPass = true;
-			}
-			_PlayerRigidBody.angularVelocity = Mathf.Max (_PlayerRigidBody.angularVelocity - speed, -maxSpeed);
-			currentAngularVelocity = _PlayerRigidBody.angularVelocity;
+				if (!firstPass) {
+						Debug.Log ("Just pressed space");
+						firstPass = true;
+				}
+				_PlayerRigidBody.angularVelocity = Mathf.Max (_PlayerRigidBody.angularVelocity - speed, -maxSpeed);
+				currentAngularVelocity = _PlayerRigidBody.angularVelocity;
 		} else {
-			if(!justLetGoOfSpace && firstPass) {
-				justLetGoOfSpace = true;
-				Debug.Log ("Just un-pressed space");
-				
-				_prepareMaterial();
-				_PlayerRigidBody.collider2D.sharedMaterial = Resources.Load<PhysicsMaterial2D>("Wheel");
-				_PlayerRigidBody.AddForce(new Vector2(-_PlayerRigidBody.angularVelocity * .99f /* The radius */ * multiplyer, 0));
-				_loadMaterial();
-			}
+				if (!justLetGoOfSpace && firstPass) {
+						justLetGoOfSpace = true;
+						Debug.Log ("Just un-pressed space");
+	
+						_prepareMaterial ();
+						_PlayerRigidBody.collider2D.sharedMaterial = Resources.Load<PhysicsMaterial2D> ("Wheel");
+						_PlayerRigidBody.AddForce (new Vector2 (-_PlayerRigidBody.angularVelocity * .99f /* The radius */ * multiplyer, 0));
+						_loadMaterial ();
+				}
 		}
-		
+
 		if (Input.GetKeyDown (KeyCode.Z)) {
-			isZoomedOut = !isZoomedOut;
-			if (isZoomedOut) {
-				camera.orthographicSize = 30f;
-			} else {
-				camera.orthographicSize = 70f;
-			}
+				isZoomedOut = !isZoomedOut;
+				if (isZoomedOut) {
+						camera.orthographicSize = 30f;
+				} else {
+						camera.orthographicSize = 70f;
+				}
 		}
 	}
 }
