@@ -6,7 +6,9 @@ enum GameObjectTypes {
 	Wall = 1,
 	Ball = 2,
 	Lava = 5,
-	Flag = 6
+	Flag = 6,
+	MagnetPull = 7,
+	MagnetPush = 8
 }
 
 public class MapMaker : MonoBehaviour {
@@ -14,6 +16,8 @@ public class MapMaker : MonoBehaviour {
 	public GameObject flag;
 	public GameObject ball;
 	public GameObject wall;
+	public GameObject magnetPull;
+	public GameObject magnetPush;
 	
 	// Use this for initialization
 	void Start () {
@@ -47,6 +51,16 @@ public class MapMaker : MonoBehaviour {
 							break;
 						case GameObjectTypes.Wall:
 							obj = Instantiate(wall, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+							obj.transform.localScale = new Vector3(1, 1, 1);
+							obj.transform.position = new Vector3(x, y, 0);
+							break;
+						case GameObjectTypes.MagnetPull:
+							obj = Instantiate(magnetPull, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+							obj.transform.localScale = new Vector3(1, 1, 1);
+							obj.transform.position = new Vector3(x, y, 0);
+							break;
+						case GameObjectTypes.MagnetPush:
+							obj = Instantiate(magnetPush, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
 							obj.transform.localScale = new Vector3(1, 1, 1);
 							obj.transform.position = new Vector3(x, y, 0);
 							break;
