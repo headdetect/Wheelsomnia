@@ -48,24 +48,27 @@ public class MapMaker : MonoBehaviour {
 							obj = Instantiate(flag, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
 							obj.transform.localScale = new Vector3(1, 1, 1);
 							obj.transform.position = new Vector3(x, y, 0);
+							obj.tag = "_LEVELBLOCK";
 							break;
 						case GameObjectTypes.Wall:
 							obj = Instantiate(wall, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
 							obj.transform.localScale = new Vector3(1, 1, 1);
 							obj.transform.position = new Vector3(x, y, 0);
+							obj.tag = "_LEVELBLOCK";
 							break;
 						case GameObjectTypes.MagnetPull:
 							obj = Instantiate(magnetPull, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
 							obj.transform.localScale = new Vector3(1, 1, 1);
 							obj.transform.position = new Vector3(x, y, 0);
+							obj.tag = "_LEVELBLOCK";
 							break;
 						case GameObjectTypes.MagnetPush:
 							obj = Instantiate(magnetPush, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
 							obj.transform.localScale = new Vector3(1, 1, 1);
 							obj.transform.position = new Vector3(x, y, 0);
+							obj.tag = "_LEVELBLOCK";
 							break;
 					}
-
 					x += 2;
 				}
 				x = 0;
