@@ -25,6 +25,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22421124}
+  - 114: {fileID: 11458716}
+  - 61: {fileID: 6144874}
   m_Layer: 5
   m_Name: Tool
   m_TagString: Untagged
@@ -66,6 +68,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &6144874
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121124}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 7.40512514, y: 34.51754}
+  m_Center: {x: -.209217101, y: 1.65229499}
 --- !u!114 &11421124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +147,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
+--- !u!114 &11458716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69ac4e6688412e428b7abdf33c2a3e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &22221124
 CanvasRenderer:
   m_ObjectHideFlags: 1
