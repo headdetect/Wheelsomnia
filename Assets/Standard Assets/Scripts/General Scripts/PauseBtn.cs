@@ -5,7 +5,7 @@ public class PauseBtn : MonoBehaviour {
 
 	public bool isPaused = false;
 	
-	void OnMouseUp() {
+	void OnMouseDown() {
 		isPaused = !isPaused;
 
 		if (isPaused) {
