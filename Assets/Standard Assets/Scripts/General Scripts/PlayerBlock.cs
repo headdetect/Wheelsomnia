@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerBlock : MonoBehaviour {
 	
-	public Sprite sprite1;
-	public Sprite sprite2;
+	Sprite sprite1 = Resources.Load<Sprite>("Graphics/Textures/ToolHandle_Move");
+	Sprite sprite2 = Resources.Load<Sprite>("Graphics/Textures/ToolHandle_Rotate");
 
 	private SpriteRenderer spriteRenderer; 
 	private bool isEditMode  = false;
