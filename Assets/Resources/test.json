@@ -5,6 +5,11 @@
          "height":50,
          "name":"main",
          "opacity":1,
+         "properties":
+            {
+             "tool_1":[7,2],
+             "tool_2":[8,1]
+            },
          "type":"tilelayer",
          "visible":true,
          "width":50,
