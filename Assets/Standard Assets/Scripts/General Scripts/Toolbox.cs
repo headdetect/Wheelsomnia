@@ -12,6 +12,7 @@ public class Toolbox : MonoBehaviour
     public GameObject panel6;
     private GameObject[] panels;
 
+
     // Use this for initialization
     void Start()
     {
@@ -24,17 +25,18 @@ public class Toolbox : MonoBehaviour
 			panel6
 		};
 
-        MapMaker map = GetComponent<MapMaker>();
+
+        MapMaker map = Camera.main.gameObject.GetComponent<MapMaker>();
         if (map != null)
         {
             for (int i = 0; i < map.tools.Length; i++)
             {
-                var tool = map.tools[i];
+                var toolSet = map.tools[i];
                 var panel = panels[i];
                 if (panel != null)
                 {
-                    Text count = panel.GetComponentInChildren<Text>();
-                    count.text = tool.count.ToString();
+                    Tool tool = panel.GetComponent<Tool>();
+                    tool.ChangeSprite(toolSet);
                 }
             }
         }
@@ -48,4 +50,6 @@ public class Toolbox : MonoBehaviour
         {
         }
     }
+
+
 }

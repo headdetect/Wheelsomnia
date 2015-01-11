@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .904411793, g: .904411793, b: .904411793, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 109f01dc6a185774293dcc767f0a823b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -556,7 +556,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942059356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
@@ -564,10 +564,10 @@ MonoBehaviour:
   tweakMode: 0
   screenBlendMode: 0
   hdr: 0
-  sepBlurSpread: 2.96000004
+  sepBlurSpread: .649999976
   useSrcAlphaAsMask: 0
   bloomIntensity: .730000019
-  bloomThreshhold: .310000002
+  bloomThreshhold: 1.00999999
   bloomBlurIterations: 2
   lensflares: 0
   hollywoodFlareBlurIterations: 2
@@ -598,12 +598,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 942059356}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9aaa3f5f2d574f228e4a21aa38b61e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 5
   showGeneratedNormals: 0
   offsetScale: .200000003
   blurRadius: 18
@@ -833,6 +833,22 @@ Prefab:
       propertyPath: m_Name
       value: Tool2
       objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
   m_RootGameObject: {fileID: 97314731}
@@ -1000,6 +1016,18 @@ Prefab:
       propertyPath: m_Size.x
       value: 7.40512466
       objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421124, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe0aa1e3e5157614aab5fc92d045b3d7, type: 2}
   m_RootGameObject: {fileID: 1911665505}
@@ -1154,10 +1182,10 @@ RectTransform:
   - {fileID: 97314732}
   m_Father: {fileID: 1423930204}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: 0, y: -248.5}
-  m_SizeDelta: {x: -494, y: 56}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 23.5}
+  m_SizeDelta: {x: 85, y: 56}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1478603287
 MonoBehaviour:
@@ -1224,7 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .904411793, g: .904411793, b: .904411793, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: 109f01dc6a185774293dcc767f0a823b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
