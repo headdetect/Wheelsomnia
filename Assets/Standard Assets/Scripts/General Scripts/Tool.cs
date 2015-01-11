@@ -11,7 +11,7 @@ public class Tool : MonoBehaviour
     void Start()
     {
         toolImage = GetComponentInChildren<Image>();
-        toolCount = GetComponentInChildren<Text>();
+		toolCount = GetComponentInChildren<Text>();
 
     }
 
@@ -21,36 +21,33 @@ public class Tool : MonoBehaviour
 
     }
 
-    void OnMouseDown()
-    {
-        if (toolCount != null)
-        {
-            Debug.Log("toolCount: " + toolCount.text);
-            if (int.Parse(toolCount.text) > 0)
-            {
-                GameObject[] playerBlocks = GameObject.FindGameObjectsWithTag("_PLAYERBLOCK");
-                PlayerBlock playerBlock;
-                foreach (GameObject b in playerBlocks)
-                {
-                    playerBlock = b.GetComponent<PlayerBlock>();
-                    if (playerBlock != null)
-                    {
-                        playerBlock.SetMode(false);
-                        Debug.Log("Disabled: " + b.gameObject.name);
+	void OnMouseDown() 
+	{
+		if (toolCount != null) 
+		{
+			Debug.Log ("toolCount: " + toolCount.text);
+			if (int.Parse (toolCount.text) > 0) 
+			{
+				GameObject[] playerBlocks = GameObject.FindGameObjectsWithTag("_PLAYERBLOCK");
+				PlayerBlock playerBlock;
+				foreach (GameObject b in playerBlocks)
+				{
+					playerBlock = b.GetComponent<PlayerBlock>();
+					if (playerBlock != null)
+					{
+						playerBlock.SetMode(false);					
+                        Debug.Log ("Disabled: " + b.gameObject.name);
                     }
                 }
 
-                GameObject block = (GameObject)Instantiate(Resources.Load("MagnetPush"));
-                block.tag = "_PLAYERBLOCK";
-                block.AddComponent("PlayerBlock");
-                block.AddComponent("SpriteRenderer");
-                block.transform.position = new Vector3(44, 0, 0);
-
-                playerBlock = block.GetComponent<PlayerBlock>();
-                playerBlock.SetMode(true);
-                Debug.Log("Created block");
-            }
-        }
-        Debug.Log("toolbox click done");
-    }
+                GameObject block = (GameObject)Instantiate (Resources.Load ("MagnetPush"));
+				block.tag = "_PLAYERBLOCK";
+				block.name = "MagnetPush-"+Time.time;
+				block.AddComponent ("PlayerBlock");
+				block.transform.position = new Vector3 (44, 0, 0);
+				Debug.Log ("Created block");
+			}
+		}
+		Debug.Log ("toolbox click done");
+	}    
 }

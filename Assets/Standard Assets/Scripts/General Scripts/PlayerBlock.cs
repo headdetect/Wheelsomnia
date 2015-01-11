@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerBlock : MonoBehaviour {
 	
-	Sprite sprite1 = Resources.Load<Sprite>("Graphics/Textures/ToolHandle_Move");
-	Sprite sprite2 = Resources.Load<Sprite>("Graphics/Textures/ToolHandle_Rotate");
+	Sprite sprite1 = Resources.Load<Sprite>("ToolHandle_Move");
+	Sprite sprite2 = Resources.Load<Sprite>("ToolHandle_Rotate");
 
 	private SpriteRenderer spriteRenderer; 
 	private bool isEditMode  = false;
@@ -13,8 +13,9 @@ public class PlayerBlock : MonoBehaviour {
 	void Start ()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		if (spriteRenderer.sprite != null) 
-			spriteRenderer.sprite = null;
+		isEditMode = true;
+		ChangeMode ();
+		Debug.Log ("started block");
 	}
 
 	void Update() {
@@ -50,6 +51,7 @@ public class PlayerBlock : MonoBehaviour {
 					ChangeMode ();
 					Debug.Log ("hit: " + hit.collider.gameObject.name);
 				}
+
 			}
 		}
 	}
@@ -57,10 +59,23 @@ public class PlayerBlock : MonoBehaviour {
 	public void SetMode(bool mode) 
 	{
 		isEditMode = mode;
-		spriteRenderer.sprite = null;
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		if (spriteRenderer != null) 
+		{
+			if (mode)
+			{
+				spriteRenderer.sprite = sprite1;
+				Debug.Log ("SetMode: True");
+			}
+			else
+			{
+				spriteRenderer.sprite = null;
+				Debug.Log ("SetMode: false");
+			}								
+		}
 	}
 
-	void ChangeMode() {
+	public void ChangeMode() {
 		Debug.Log ("ChangeMode: " + this.gameObject.name);
 		if (isEditMode)
 		{
@@ -77,6 +92,7 @@ public class PlayerBlock : MonoBehaviour {
 				}
 			}
 			isEditMode = true;
+			Debug.Log ("ChangeMode: true");
 
 			if (transformMode)
 			{
