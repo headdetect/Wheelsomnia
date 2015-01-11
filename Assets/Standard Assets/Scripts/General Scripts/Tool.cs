@@ -40,12 +40,13 @@ public class Tool : MonoBehaviour
                     }
                 }
 
-                GameObject block = (GameObject)Instantiate (Resources.Load ("MagnetPush"));
+                GameObject block = (GameObject)Instantiate (Resources.Load ("Prefabs/MagnetPush"));
 				block.tag = "_PLAYERBLOCK";
 				block.name = "MagnetPush-"+Time.time;
 				block.AddComponent ("PlayerBlock");
 				block.transform.position = new Vector3 (44, 0, 0);
 				Debug.Log ("Created block");
+				toolCount.text = "" + (int.Parse (toolCount.text) - 1);
 			}
 		}
 		Debug.Log ("toolbox click done");
