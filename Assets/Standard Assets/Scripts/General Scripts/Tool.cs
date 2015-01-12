@@ -83,17 +83,26 @@ public class Tool : MonoBehaviour
                     }
                 }
 
-                //TODO: check for block type
-                GameObject block = (GameObject)Instantiate (Resources.Load ("Prefabs/MagnetPush"));
+				GameObject block = new GameObject(); 
+
+				switch (objectType)
+				{
+					case GameObjectTypes.MagnetPull:
+						block = (GameObject)Instantiate (Resources.Load ("Prefabs/MagnetPull"));
+						block.name = block.name + toolCount.text;
+						break;
+					case GameObjectTypes.MagnetPush:
+						block = (GameObject)Instantiate (Resources.Load ("Prefabs/MagnetPush"));
+						block.name = block.name + toolCount.text;
+						break;
+				}
 				block.tag = "_PLAYERBLOCK";
-				block.name = "MagnetPush-"+Time.time;
 				block.AddComponent ("PlayerBlock");
 				block.transform.position = new Vector3 (44, 0, 0);
-				Debug.Log ("Created block");
+
                 _spriteChanged = true;
 			}
 		}
-		Debug.Log ("toolbox click done");
 	}
 
     private string GetImage(string texture)
