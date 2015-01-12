@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BallController : MonoBehaviour
 {
-
     public float speed = 150f;
     public float maxSpeed = 1500f;
     public float currentAngularVelocity = 0;
@@ -11,7 +10,10 @@ public class BallController : MonoBehaviour
     private bool firstPass = false;
     private bool justLetGoOfSpace = false;
     private bool isZoomedOut = false;
-    private Rigidbody2D _PlayerRigidBody;
+	private Rigidbody2D _PlayerRigidBody;
+	public GameObject wall;
+	
+	private float cameraMinX, cameraMinY, cameraMaxX, cameraMaxY;
 
     // Bug in unity...
     private void _loadMaterial()
@@ -27,6 +29,17 @@ public class BallController : MonoBehaviour
     void Start()
     {
         _PlayerRigidBody = rigidbody2D;
+
+		cameraMinY = Camera.main.transform.position.y - Camera.main.orthographicSize;
+		cameraMinX = Camera.main.transform.position.x - Camera.main.orthographicSize;
+		cameraMaxX = Camera.main.transform.position.x + Camera.main.orthographicSize;
+		cameraMaxY = Camera.main.transform.position.y + Camera.main.orthographicSize;
+
+		Debug.Log (cameraMinX + " : " + cameraMinY + "       " + cameraMaxX + " : " + cameraMaxY);
+
+		var wall = GameObject.FindGameObjectWithTag ("_LEVELBLOCK");
+		Instantiate(wall, new Vector3(cameraMinX, cameraMinY, 0), Quaternion.identity);
+		Instantiate (wall, new Vector3 (cameraMaxX, cameraMaxY, 0), Quaternion.identity);
     }
 
     void Update()
@@ -71,5 +84,22 @@ public class BallController : MonoBehaviour
                 camera.orthographicSize = 70f;
             }
         }
+
+		if (transform.position.x <= cameraMinX || transform.position.x >= cameraMaxX) {
+			var vel = _PlayerRigidBody.velocity;
+			vel.x *= -0.8f;
+			_PlayerRigidBody.velocity = vel;
+		}
+		if (transform.position.y <= cameraMinY || transform.position.y >= cameraMaxY) {
+			var vel = _PlayerRigidBody.velocity;
+			vel.y *= -0.8f;
+			_PlayerRigidBody.velocity = vel;
+		}
+
+		var pos = transform.position;
+		pos.x = Mathf.Clamp(pos.x, cameraMinX, cameraMaxX);
+		pos.y = Mathf.Clamp(pos.y, cameraMinY, cameraMaxY);
+
+		transform.position = pos;
     }
 }

@@ -28,22 +28,6 @@ public class MapMaker : MonoBehaviour
 
     internal ToolSet[] tools = new ToolSet[6];
 
-    void OnGUI()
-    {
-        int tools = GameObject.FindGameObjectsWithTag("_PLAYERBLOCK").Length;
-        int total = GameObject.FindObjectsOfType(typeof(MonoBehaviour)).Length;
-
-        Color temp = GUI.backgroundColor;
-        GUI.backgroundColor = new Color(0f, 1f / 188f, 1f / 212f, 0.7f);
-
-        GUI.Box(new Rect(0, 0, 150, 100), "Debug Tools");
-        GUI.Label(new Rect(5, 30, 150, 50), "FPS: " + (1f / Time.deltaTime));
-        GUI.Label(new Rect(5, 45, 150, 50), "# of GameObjects: " + total);
-        GUI.Label(new Rect(5, 60, 150, 50), "# of Tools: " + tools);
-
-        GUI.backgroundColor = temp;
-    }
-
     // Use this for initialization
     void Start()
     {
@@ -87,6 +71,7 @@ public class MapMaker : MonoBehaviour
                             obj = Instantiate(ball, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
                             obj.transform.localScale = new Vector3(1, 1, 1);
                             obj.transform.position = new Vector3(x, y, 0);
+							obj.tag = "_PLAYER";
                             break;
                         case GameObjectTypes.Flag:
                             obj = Instantiate(flag, new Vector3(x, y, 0), Quaternion.identity) as GameObject;
