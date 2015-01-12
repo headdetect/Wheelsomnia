@@ -85,7 +85,7 @@ public class BallController : MonoBehaviour
             }
         }
 
-		if (transform.position.x <= cameraMinX || transform.position.x >= cameraMaxX) {
+		/*if (transform.position.x <= cameraMinX || transform.position.x >= cameraMaxX) {
 			var vel = _PlayerRigidBody.velocity;
 			vel.x *= -0.8f;
 			_PlayerRigidBody.velocity = vel;
@@ -100,6 +100,13 @@ public class BallController : MonoBehaviour
 		pos.x = Mathf.Clamp(pos.x, cameraMinX, cameraMaxX);
 		pos.y = Mathf.Clamp(pos.y, cameraMinY, cameraMaxY);
 
-		transform.position = pos;
+		transform.position = pos;*/
+
+		var gui = Camera.main.GetComponent<GameGui>();
+		if (gui != null && !gui.dead && (transform.position.x <= cameraMinX || transform.position.x >= cameraMaxX || 
+		    transform.position.y <= cameraMinY || transform.position.y >= cameraMaxY)) {
+			gui.dead = true;
+			gui.lastDead = (Time.time * 1000f);
+		}
     }
 }
